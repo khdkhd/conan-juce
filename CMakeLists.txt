@@ -1,5 +1,8 @@
 project(JUCE)
 
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
+
 separate_arguments(MODULES)
 
 option(SHARED "Enable/Distable shared library" OFF)
