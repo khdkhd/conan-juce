@@ -1,0 +1,45 @@
+if(APPLE)
+  set(JUCE_MODULE_HEADERS
+    "${JUCE_MODULE_PATH}/audio_io/juce_AudioDeviceManager.h"
+    "${JUCE_MODULE_PATH}/audio_io/juce_AudioIODevice.h"
+    "${JUCE_MODULE_PATH}/audio_io/juce_AudioIODeviceType.h"
+    "${JUCE_MODULE_PATH}/audio_io/juce_SystemAudioVolume.h"
+    "${JUCE_MODULE_PATH}/midi_io/juce_MidiInput.h"
+    "${JUCE_MODULE_PATH}/midi_io/juce_MidiMessageCollector.h"
+    "${JUCE_MODULE_PATH}/midi_io/juce_MidiOutput.h"
+    "${JUCE_MODULE_PATH}/native/juce_ios_Audio.h"
+    "${JUCE_MODULE_PATH}/native/juce_MidiDataConcatenator.h"
+    "${JUCE_MODULE_PATH}/sources/juce_AudioSourcePlayer.h"
+    "${JUCE_MODULE_PATH}/sources/juce_AudioTransportSource.h"
+    "${JUCE_MODULE_PATH}/juce_audio_devices.h"
+  )
+  set(JUCE_MODULE_SOURCES
+    "${JUCE_MODULE_PATH}/audio_io/juce_AudioDeviceManager.cpp"
+    "${JUCE_MODULE_PATH}/audio_io/juce_AudioIODevice.cpp"
+    "${JUCE_MODULE_PATH}/audio_io/juce_AudioIODeviceType.cpp"
+    "${JUCE_MODULE_PATH}/midi_io/juce_MidiMessageCollector.cpp"
+    "${JUCE_MODULE_PATH}/midi_io/juce_MidiOutput.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_android_Audio.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_android_Midi.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_android_Oboe.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_android_OpenSL.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_ios_Audio.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_linux_ALSA.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_linux_Bela.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_linux_JackAudio.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_linux_Midi.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_mac_CoreAudio.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_mac_CoreMidi.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_win32_ASIO.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_win32_DirectSound.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_win32_Midi.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_win32_WASAPI.cpp"
+    "${JUCE_MODULE_PATH}/sources/juce_AudioSourcePlayer.cpp"
+    "${JUCE_MODULE_PATH}/sources/juce_AudioTransportSource.cpp"
+  )
+  set(JUCE_MODULE_DEPENDENCIES
+    "-framework AudioToolbox"
+    "-framework CoreAudio"
+    "-framework CoreMIDI"
+  )
+endif()

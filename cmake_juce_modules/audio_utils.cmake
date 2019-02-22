@@ -1,0 +1,41 @@
+if(APPLE)
+  set(JUCE_MODULE_HEADERS
+    "${JUCE_MODULE_PATH}/audio_cd/juce_AudioCDBurner.h"
+    "${JUCE_MODULE_PATH}/audio_cd/juce_AudioCDReader.h"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioAppComponent.h"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioDeviceSelectorComponent.h"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioThumbnail.h"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioThumbnailBase.h"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioThumbnailCache.h"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioVisualiserComponent.h"
+    "${JUCE_MODULE_PATH}/gui/juce_BluetoothMidiDevicePairingDialogue.h"
+    "${JUCE_MODULE_PATH}/gui/juce_MidiKeyboardComponent.h"
+    "${JUCE_MODULE_PATH}/players/juce_AudioProcessorPlayer.h"
+    "${JUCE_MODULE_PATH}/players/juce_SoundPlayer.h"
+    "${JUCE_MODULE_PATH}/juce_audio_utils.h"
+  )
+  set(JUCE_MODULE_SOURCES
+    "${JUCE_MODULE_PATH}/audio_cd/juce_AudioCDReader.cpp"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioAppComponent.cpp"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioDeviceSelectorComponent.cpp"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioThumbnail.cpp"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioThumbnailCache.cpp"
+    "${JUCE_MODULE_PATH}/gui/juce_AudioVisualiserComponent.cpp"
+    "${JUCE_MODULE_PATH}/gui/juce_MidiKeyboardComponent.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_android_BluetoothMidiDevicePairingDialogue.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_ios_BluetoothMidiDevicePairingDialogue.mm"
+    "${JUCE_MODULE_PATH}/native/juce_linux_AudioCDReader.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_linux_BluetoothMidiDevicePairingDialogue.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_mac_AudioCDBurner.mm"
+    "${JUCE_MODULE_PATH}/native/juce_mac_AudioCDReader.mm"
+    "${JUCE_MODULE_PATH}/native/juce_mac_BluetoothMidiDevicePairingDialogue.mm"
+    "${JUCE_MODULE_PATH}/native/juce_win_BluetoothMidiDevicePairingDialogue.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_win32_AudioCDBurner.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_win32_AudioCDReader.cpp"
+    "${JUCE_MODULE_PATH}/players/juce_AudioProcessorPlayer.cpp"
+    "${JUCE_MODULE_PATH}/players/juce_SoundPlayer.cpp"
+  )
+  set(JUCE_MODULE_DEPENDENCIES
+    "-framework DiscRecording"
+  )
+endif()

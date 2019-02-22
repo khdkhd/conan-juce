@@ -1,0 +1,35 @@
+if(APPLE)
+  set(JUCE_MODULE_HEADERS
+    "${JUCE_MODULE_PATH}/blocks/juce_Block.h"
+    "${JUCE_MODULE_PATH}/blocks/juce_BlockConfigManager.h"
+    "${JUCE_MODULE_PATH}/blocks/juce_ControlButton.h"
+    "${JUCE_MODULE_PATH}/blocks/juce_LEDGrid.h"
+    "${JUCE_MODULE_PATH}/blocks/juce_LEDRow.h"
+    "${JUCE_MODULE_PATH}/blocks/juce_StatusLight.h"
+    "${JUCE_MODULE_PATH}/blocks/juce_TouchList.h"
+    "${JUCE_MODULE_PATH}/blocks/juce_TouchSurface.h"
+    "${JUCE_MODULE_PATH}/littlefoot/juce_LittleFootCompiler.h"
+    "${JUCE_MODULE_PATH}/littlefoot/juce_LittleFootRemoteHeap.h"
+    "${JUCE_MODULE_PATH}/littlefoot/juce_LittleFootRunner.h"
+    "${JUCE_MODULE_PATH}/protocol/juce_BitPackingUtilities.h"
+    "${JUCE_MODULE_PATH}/protocol/juce_BlockModels.h"
+    "${JUCE_MODULE_PATH}/protocol/juce_BlocksProtocolDefinitions.h"
+    "${JUCE_MODULE_PATH}/protocol/juce_HostPacketBuilder.h"
+    "${JUCE_MODULE_PATH}/protocol/juce_HostPacketDecoder.h"
+    "${JUCE_MODULE_PATH}/topology/juce_PhysicalTopologySource.h"
+    "${JUCE_MODULE_PATH}/topology/juce_RuleBasedTopologySource.h"
+    "${JUCE_MODULE_PATH}/topology/juce_Topology.h"
+    "${JUCE_MODULE_PATH}/topology/juce_TopologySource.h"
+    "${JUCE_MODULE_PATH}/visualisers/juce_BitmapLEDProgram.h"
+    "${JUCE_MODULE_PATH}/visualisers/juce_DrumPadLEDProgram.h"
+    "${JUCE_MODULE_PATH}/juce_blocks_basics.h"
+  )
+  set(JUCE_MODULE_SOURCES
+    "${JUCE_MODULE_PATH}/blocks/juce_Block.cpp"
+    "${JUCE_MODULE_PATH}/topology/juce_PhysicalTopologySource.cpp"
+    "${JUCE_MODULE_PATH}/topology/juce_RuleBasedTopologySource.cpp"
+    "${JUCE_MODULE_PATH}/visualisers/juce_BitmapLEDProgram.cpp"
+    "${JUCE_MODULE_PATH}/visualisers/juce_DrumPadLEDProgram.cpp"
+  )
+  set(JUCE_MODULE_DEPENDENCIES)
+endif()

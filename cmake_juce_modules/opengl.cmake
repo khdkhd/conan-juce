@@ -1,0 +1,40 @@
+if(APPLE)
+  set(JUCE_MODULE_HEADERS
+    "${JUCE_MODULE_PATH}/geometry/juce_Draggable3DOrientation.h"
+    "${JUCE_MODULE_PATH}/geometry/juce_Matrix3D.h"
+    "${JUCE_MODULE_PATH}/geometry/juce_Quaternion.h"
+    "${JUCE_MODULE_PATH}/geometry/juce_Vector3D.h"
+    "${JUCE_MODULE_PATH}/native/juce_MissingGLDefinitions.h"
+    "${JUCE_MODULE_PATH}/native/juce_OpenGL_android.h"
+    "${JUCE_MODULE_PATH}/native/juce_OpenGL_ios.h"
+    "${JUCE_MODULE_PATH}/native/juce_OpenGL_linux_X11.h"
+    "${JUCE_MODULE_PATH}/native/juce_OpenGL_osx.h"
+    "${JUCE_MODULE_PATH}/native/juce_OpenGL_win32.h"
+    "${JUCE_MODULE_PATH}/native/juce_OpenGLExtensions.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLContext.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLFrameBuffer.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLGraphicsContext.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLHelpers.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLImage.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLPixelFormat.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLRenderer.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLShaderProgram.h"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLTexture.h"
+    "${JUCE_MODULE_PATH}/utils/juce_OpenGLAppComponent.h"
+    "${JUCE_MODULE_PATH}/juce_opengl.h"
+  )
+  set(JUCE_MODULE_SOURCES
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLContext.cpp"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLFrameBuffer.cpp"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLGraphicsContext.cpp"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLHelpers.cpp"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLImage.cpp"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLPixelFormat.cpp"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLShaderProgram.cpp"
+    "${JUCE_MODULE_PATH}/opengl/juce_OpenGLTexture.cpp"
+    "${JUCE_MODULE_PATH}/utils/juce_OpenGLAppComponent.cpp"
+  )
+  set(JUCE_MODULE_DEPENDENCIES
+    "-framework OpenGL"
+  )
+endif()

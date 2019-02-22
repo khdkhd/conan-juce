@@ -1,0 +1,24 @@
+if(APPLE)
+  set(JUCE_MODULE_HEADERS
+    "${JUCE_MODULE_PATH}/osc/juce_OSCAddress.h"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCArgument.h"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCBundle.h"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCMessage.h"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCReceiver.h"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCSender.h"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCTimeTag.h"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCTypes.h"
+    "${JUCE_MODULE_PATH}/juce_osc.h"
+  )
+  set(JUCE_MODULE_SOURCES
+    "${JUCE_MODULE_PATH}/osc/juce_OSCAddress.cpp"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCArgument.cpp"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCBundle.cpp"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCMessage.cpp"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCReceiver.cpp"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCSender.cpp"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCTimeTag.cpp"
+    "${JUCE_MODULE_PATH}/osc/juce_OSCTypes.cpp"
+  )
+  set(JUCE_MODULE_DEPENDENCIES)
+endif()

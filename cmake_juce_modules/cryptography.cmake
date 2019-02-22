@@ -1,0 +1,20 @@
+if(APPLE)
+  set(JUCE_MODULE_HEADERS
+    "${JUCE_MODULE_PATH}/encryption/juce_BlowFish.h"
+    "${JUCE_MODULE_PATH}/encryption/juce_Primes.h"
+    "${JUCE_MODULE_PATH}/encryption/juce_RSAKey.h"
+    "${JUCE_MODULE_PATH}/hashing/juce_MD5.h"
+    "${JUCE_MODULE_PATH}/hashing/juce_SHA256.h"
+    "${JUCE_MODULE_PATH}/hashing/juce_Whirlpool.h"
+    "${JUCE_MODULE_PATH}/juce_cryptography.h"
+  )
+  set(JUCE_MODULE_SOURCES
+    "${JUCE_MODULE_PATH}/encryption/juce_BlowFish.cpp"
+    "${JUCE_MODULE_PATH}/encryption/juce_Primes.cpp"
+    "${JUCE_MODULE_PATH}/encryption/juce_RSAKey.cpp"
+    "${JUCE_MODULE_PATH}/hashing/juce_MD5.cpp"
+    "${JUCE_MODULE_PATH}/hashing/juce_SHA256.cpp"
+    "${JUCE_MODULE_PATH}/hashing/juce_Whirlpool.cpp"
+  )
+  set(JUCE_MODULE_DEPENDENCIES)
+endif()

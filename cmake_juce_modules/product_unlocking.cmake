@@ -1,0 +1,19 @@
+if(APPLE)
+  set(JUCE_MODULE_HEADERS
+    "${JUCE_MODULE_PATH}/in_app_purchases/juce_InAppPurchases.h"
+    "${JUCE_MODULE_PATH}/marketplace/juce_KeyFileGeneration.h"
+    "${JUCE_MODULE_PATH}/marketplace/juce_OnlineUnlockForm.h"
+    "${JUCE_MODULE_PATH}/marketplace/juce_OnlineUnlockStatus.h"
+    "${JUCE_MODULE_PATH}/marketplace/juce_TracktionMarketplaceStatus.h"
+    "${JUCE_MODULE_PATH}/juce_product_unlocking.h"
+  )
+  set(JUCE_MODULE_SOURCES
+    "${JUCE_MODULE_PATH}/in_app_purchases/juce_InAppPurchases.cpp"
+    "${JUCE_MODULE_PATH}/marketplace/juce_OnlineUnlockForm.cpp"
+    "${JUCE_MODULE_PATH}/marketplace/juce_OnlineUnlockStatus.cpp"
+    "${JUCE_MODULE_PATH}/marketplace/juce_TracktionMarketplaceStatus.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_android_InAppPurchases.cpp"
+    "${JUCE_MODULE_PATH}/native/juce_ios_InAppPurchases.cpp"
+  )
+  set(JUCE_MODULE_DEPENDENCIES)
+endif()

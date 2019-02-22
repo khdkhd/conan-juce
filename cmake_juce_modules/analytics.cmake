@@ -1,0 +1,15 @@
+if(APPLE)
+  set(JUCE_MODULE_HEADERS
+    "${JUCE_MODULE_PATH}/analytics/juce_Analytics.h"
+    "${JUCE_MODULE_PATH}/analytics/juce_ButtonTracker.h"
+    "${JUCE_MODULE_PATH}/destinations/juce_AnalyticsDestination.h"
+    "${JUCE_MODULE_PATH}/destinations/juce_ThreadedAnalyticsDestination.h"
+    "${JUCE_MODULE_PATH}/juce_analytics.h"
+  )
+  set(JUCE_MODULE_SOURCES
+    "${JUCE_MODULE_PATH}/analytics/juce_Analytics.cpp"
+    "${JUCE_MODULE_PATH}/analytics/juce_ButtonTracker.cpp"
+    "${JUCE_MODULE_PATH}/destinations/juce_ThreadedAnalyticsDestination.cpp"
+  )
+  set(JUCE_MODULE_DEPENDENCIES)
+endif()
