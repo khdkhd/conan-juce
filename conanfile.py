@@ -59,4 +59,49 @@ class JuceConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = ["JUCE"]
+        if self.settings.os == "Macos":
+            frameworks = set()
+            if self.options.audio_basics:
+                frameworks.add("-framework Accelerate")
+            if self.options.audio_devices:
+                frameworks.add("-framework AudioToolbox")
+                frameworks.add("-framework CoreAudio")
+                frameworks.add("-framework CoreMIDI")
+            if self.options.audio_formats:
+                frameworks.add("-framework AudioToolbox")
+                frameworks.add("-framework CoreAudio")
+                frameworks.add("-framework CoreMIDI")
+                frameworks.add("-framework QuartzCore")
+            if self.options.audio_processors:
+                frameworks.add("-framework CoreAudio")
+                frameworks.add("-framework CoreMIDI")
+                frameworks.add("-framework AudioToolbox")
+            if self.options.audio_utils:
+                frameworks.add("-framework DiscRecording")
+            if self.options.dsp:
+                frameworks.add("-framework Accelerate")
+            if self.options.graphics:
+                frameworks.add("-framework Cocoa")
+                frameworks.add("-framework QuartzCore")
+            if self.options.gui_basics:
+                frameworks.add("-framework Carbon")
+                frameworks.add("-framework Cocoa")
+                frameworks.add("-framework QuartzCore")
+            if self.options.gui_extra:
+                frameworks.add("-framework WebKit")
+            if self.options.opengl:
+                frameworks.add("-framework OpenGL")
+            if self.options.video:
+                frameworks.add("-framework AVKit")
+                frameworks.add("-framework AVFoundation")
+                frameworks.add("-framework CoreMedia")
+            for framework in frameworks:
+                self.cpp_info.exelinkflags.append(framework)
+            self.cpp_info.exelinkflags.append("-framework AppKit")
+            self.cpp_info.exelinkflags.append("-framework Cocoa")
+            self.cpp_info.exelinkflags.append("-framework CoreFoundation")
+            self.cpp_info.exelinkflags.append("-framework CoreGraphics")
+            self.cpp_info.exelinkflags.append("-framework CoreImage")
+            self.cpp_info.exelinkflags.append("-framework CoreText")
+            self.cpp_info.exelinkflags.append("-framework IOKit")
 
