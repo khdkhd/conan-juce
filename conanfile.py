@@ -104,4 +104,7 @@ class JuceConan(ConanFile):
             self.cpp_info.exelinkflags.append("-framework CoreImage")
             self.cpp_info.exelinkflags.append("-framework CoreText")
             self.cpp_info.exelinkflags.append("-framework IOKit")
+        if self.settings.build_type == "Debug":
+            self.cpp_info.defines.append("JUCE_DEBUG")
+
 

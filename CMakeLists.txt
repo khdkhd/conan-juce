@@ -38,6 +38,10 @@ endforeach()
 list(SORT JUCE_DEPENDENCIES)
 list(REMOVE_DUPLICATES JUCE_DEPENDENCIES)
 
+if(NOT (CMAKE_BUILD_TYPE STREQUAL Release))
+  set(JUCE_DEBUG ON)
+endif()
+
 set(JUCE_APP_CONFIG_HEADER "${CMAKE_CURRENT_BINARY_DIR}/include/juce/config.h")
 set(JUCE_HEADER "${CMAKE_CURRENT_BINARY_DIR}/include/juce.h")
 
@@ -65,8 +69,13 @@ target_compile_definitions(${PROJECT_NAME}
   PUBLIC
     JUCE_API=
     JUCE_APP_CONFIG_HEADER="${JUCE_APP_CONFIG_HEADER}"
-    NDEBUG
 )
+if(NOT (CMAKE_BUILD_TYPE STREQUAL Release))
+  target_compile_definitions(${PROJECT_NAME}
+    PUBLIC
+      NDEBUG
+  )
+endif()
 target_compile_features(${PROJECT_NAME}
   PUBLIC
     cxx_std_17

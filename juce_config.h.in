@@ -35,9 +35,7 @@
 
 // BEGIN SECTION A
 
-#ifndef JUCE_DISPLAY_SPLASH_SCREEN
- #define JUCE_DISPLAY_SPLASH_SCREEN 1
-#endif
+#define JUCE_DISPLAY_SPLASH_SCREEN 0
 
 #ifndef JUCE_REPORT_APP_USAGE
  #define JUCE_REPORT_APP_USAGE 1
@@ -72,10 +70,10 @@
 #cmakedefine JUCE_MODULE_AVAILABLE_juce_video @JUCE_MODULE_AVAILABLE_juce_video@
 
 #cmakedefine01 JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED
+#cmakedefine01 JUCE_DEBUG
 
 //==============================================================================
 // juce_audio_devices flags:
-
 #ifndef    JUCE_USE_WINRT_MIDI
  //#define JUCE_USE_WINRT_MIDI 0
 #endif
