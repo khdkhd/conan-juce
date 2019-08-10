@@ -36,6 +36,7 @@ class JuceConan(ConanFile):
     exports = "CMakeLists.txt", "cmake_juce_modules/*", "juce_config.h.in", "juce.h.in"
     options = dict({"shared": [True, False]}, **{module: [True, False] for module in JUCE_MODULES})
     default_options = dict({"shared": "False"}, **{module: "False" for module in JUCE_MODULES})
+    requires = "zlib/1.2.11@conan/stable"
 
     @property
     def juce_source_dir(self):
