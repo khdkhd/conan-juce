@@ -67,6 +67,13 @@ class JuceConan(ConanFile):
         self.cpp_info.libs = ["JUCE"]
         if self.settings.os == "Macos":
             frameworks = set()
+            frameworks.add("-framework AppKit")
+            frameworks.add("-framework Cocoa")
+            frameworks.add("-framework CoreFoundation")
+            frameworks.add("-framework CoreGraphics")
+            frameworks.add("-framework CoreImage")
+            frameworks.add("-framework CoreText")
+            frameworks.add("-framework IOKit")
             if self.options.audio_basics:
                 frameworks.add("-framework Accelerate")
             if self.options.audio_devices:
@@ -101,16 +108,6 @@ class JuceConan(ConanFile):
                 frameworks.add("-framework AVKit")
                 frameworks.add("-framework AVFoundation")
                 frameworks.add("-framework CoreMedia")
-            for framework in frameworks:
-                self.cpp_info.exelinkflags.append(framework)
-            self.cpp_info.exelinkflags.append("-framework AppKit")
-            self.cpp_info.exelinkflags.append("-framework Cocoa")
-            self.cpp_info.exelinkflags.append("-framework CoreFoundation")
-            self.cpp_info.exelinkflags.append("-framework CoreGraphics")
-            self.cpp_info.exelinkflags.append("-framework CoreImage")
-            self.cpp_info.exelinkflags.append("-framework CoreText")
-            self.cpp_info.exelinkflags.append("-framework IOKit")
+            self.cpp_info.exelinkflags += frameworks
         if self.settings.build_type == "Debug":
             self.cpp_info.defines.append("JUCE_DEBUG")
-
-
