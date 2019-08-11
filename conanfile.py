@@ -33,7 +33,7 @@ class JuceConan(ConanFile):
     topics = ("JUCE", "audio", "GUI")
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
-    exports = "CMakeLists.txt", "cmake_juce_modules/*", "juce_config.h.in", "juce.h.in"
+    exports = "CMakeLists.txt", "CMakeJuceModules/*", "juce_config.h.in", "juce.h.in"
     options = dict(
         {"shared": [True, False]},
         **{module: [True, False] for module in JUCE_MODULES}

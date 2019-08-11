@@ -8,7 +8,7 @@ separate_arguments(MODULES)
 option(SHARED "Enable/Distable shared library" OFF)
 
 set(JUCE_MODULE_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/JUCE/modules")
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake_juce_modules")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeJuceModules")
 
 foreach(MODULE ${MODULES})
   set(JUCE_MODULE_AVAILABLE_juce_${MODULE} 1)
