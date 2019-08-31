@@ -193,7 +193,6 @@ if(APPLE)
     "${JUCE_MODULE_PATH}/layout/juce_FlexBox.cpp"
     "${JUCE_MODULE_PATH}/layout/juce_Grid.cpp"
     "${JUCE_MODULE_PATH}/layout/juce_GridItem.cpp"
-    "${JUCE_MODULE_PATH}/layout/juce_GridUnitTests.cpp"
     "${JUCE_MODULE_PATH}/layout/juce_GroupComponent.cpp"
     "${JUCE_MODULE_PATH}/layout/juce_MultiDocumentPanel.cpp"
     "${JUCE_MODULE_PATH}/layout/juce_ResizableBorderComponent.cpp"
