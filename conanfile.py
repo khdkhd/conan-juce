@@ -24,7 +24,7 @@ JUCE_MODULES = [
 
 class JuceConan(ConanFile):
     name = "JUCE"
-    version = "5.4.1"
+    version = "5.4.4"
     license = "ISC"
     author = "Julien Graziano (julien@graziano.fr)"
     url = "https://github.com/khdkhd/conan-juce"
