@@ -5,7 +5,9 @@ conan_basic_setup(TARGETS)
 
 separate_arguments(MODULES)
 
-option(SHARED "Enable/Distable shared library" OFF)
+option(SHARED "Enable/Disable shared library" OFF)
+option(JUCE_DISPLAY_SPLASH_SCREEN "Enable/Disable splash screen" OFF)
+option(JUCE_REPORT_APP_USAGE "Enable/Disable application usage reporting" OFF)
 
 set(JUCE_MODULE_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/JUCE/modules")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeJuceModules")
@@ -44,6 +46,22 @@ endif()
 
 set(JUCE_APP_CONFIG_HEADER "${CMAKE_CURRENT_BINARY_DIR}/include/juce/config.h")
 set(JUCE_HEADER "${CMAKE_CURRENT_BINARY_DIR}/include/juce.h")
+
+if(APPLE)
+  if(NOT DEFINED JUCE_USE_COREIMAGE_LOADER)
+    set(JUCE_USE_COREIMAGE_LOADER ON)
+  endif()
+  if(NOT DEFINED JUCE_DISABLE_COREGRAPHICS_FONT_SMOOTHING)
+    set(JUCE_DISABLE_COREGRAPHICS_FONT_SMOOTHING ON)
+  endif()
+  if(NOT DEFINED USE_COREGRAPHICS_RENDERING)
+    set(USE_COREGRAPHICS_RENDERING ON)
+  endif()
+else()
+  set(JUCE_USE_COREIMAGE_LOADER OFF)
+  set(JUCE_DISABLE_COREGRAPHICS_FONT_SMOOTHING OFF)
+  set(USE_COREGRAPHICS_RENDERING OFF)
+endif()
 
 configure_file(juce_config.h.in ${JUCE_APP_CONFIG_HEADER})
 configure_file(juce.h.in ${JUCE_HEADER})

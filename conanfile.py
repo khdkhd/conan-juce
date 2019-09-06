@@ -28,18 +28,33 @@ class JuceConan(ConanFile):
     license = "ISC"
     author = "Julien Graziano (julien@graziano.fr)"
     url = "https://github.com/khdkhd/conan-juce"
-    source_url = "https://github.com/WeAreROLI/JUCE.git"
+    # source_url = "https://github.com/WeAreROLI/JUCE.git"
+    source_url = "/Users/jux/Documents/Development/KhdKhd/JUCE"
     description = "The JUCE cross-platform C++ framework."
     topics = ("JUCE", "audio", "GUI")
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
     exports = "CMakeLists.txt", "CMakeJuceModules/*", "juce_config.h.in", "juce.h.in"
     options = dict(
-        {"shared": [True, False]},
+        {
+            "shared": [True, False],
+            "splash_screen": [True, False],
+            "report_app_usage": [True, False],
+            "use_coreimage_loader": [True, False],
+            "disable_coregraphics_font_smoothing": [True, False],
+            "use_coregraphics_rendering": [True, False],
+        },
         **{module: [True, False] for module in JUCE_MODULES}
     )
     default_options = dict(
-        {"shared": "False"},
+        {
+            "shared": "False",
+            "splash_screen": "False",
+            "report_app_usage": "False",
+            "use_coreimage_loader": "True",
+            "disable_coregraphics_font_smoothing": "True",
+            "use_coregraphics_rendering": "True"
+        },
         **{module: "False" for module in JUCE_MODULES}
     )
     requires = "zlib/1.2.11@conan/stable"
@@ -58,7 +73,12 @@ class JuceConan(ConanFile):
         cmake = CMake(self)
         cmake.configure(source_folder=self.source_folder, defs={
             "MODULES": ";".join(modules),
-            "SHARED": "ON" if self.options.shared else "OFF"
+            "SHARED": "ON" if self.options.shared else "OFF",
+            "JUCE_DISPLAY_SPLASH_SCREEN": "ON" if self.options.splash_screen else "OFF",
+            "JUCE_REPORT_APP_USAGE": "ON"  if self.options.report_app_usage else "OFF",
+            "JUCE_USE_COREIMAGE_LOADER": "ON" if self.options.use_coreimage_loader else "OFF",
+            "JUCE_DISABLE_COREGRAPHICS_FONT_SMOOTHING": "ON" if self.options.disable_coregraphics_font_smoothing else "OFF",
+            "USE_COREGRAPHICS_RENDERING": "ON" if self.options.use_coregraphics_rendering else "OFF"
         })
         cmake.build()
         cmake.install()
