@@ -29,7 +29,8 @@ class JuceConan(ConanFile):
     author = "Julien Graziano (julien@graziano.fr)"
     url = "https://github.com/khdkhd/conan-juce"
     # source_url = "https://github.com/WeAreROLI/JUCE.git"
-    source_url = "/Users/jux/Documents/Development/KhdKhd/JUCE"
+    source_url = "/Users/jux/Documents/Development/KhdKhd/JuCE"
+
     description = "The JUCE cross-platform C++ framework."
     topics = ("JUCE", "audio", "GUI")
     settings = "os", "compiler", "build_type", "arch"
@@ -37,23 +38,19 @@ class JuceConan(ConanFile):
     exports = "CMakeLists.txt", "CMakeJuceModules/*", "juce_config.h.in", "juce.h.in"
     options = dict(
         {
+            "report_app_usage": [True, False],
             "shared": [True, False],
             "splash_screen": [True, False],
-            "report_app_usage": [True, False],
-            "use_coreimage_loader": [True, False],
-            "disable_coregraphics_font_smoothing": [True, False],
-            "use_coregraphics_rendering": [True, False],
+            "use_dark_splash_screen": [True, False]
         },
         **{module: [True, False] for module in JUCE_MODULES}
     )
     default_options = dict(
         {
-            "shared": "False",
-            "splash_screen": "False",
             "report_app_usage": "False",
-            "use_coreimage_loader": "True",
-            "disable_coregraphics_font_smoothing": "True",
-            "use_coregraphics_rendering": "True"
+            "shared": "False",
+            "splash_screen": "True",
+            "use_dark_splash_screen": "True"
         },
         **{module: "False" for module in JUCE_MODULES}
     )
@@ -75,10 +72,8 @@ class JuceConan(ConanFile):
             "MODULES": ";".join(modules),
             "SHARED": "ON" if self.options.shared else "OFF",
             "JUCE_DISPLAY_SPLASH_SCREEN": "ON" if self.options.splash_screen else "OFF",
-            "JUCE_REPORT_APP_USAGE": "ON"  if self.options.report_app_usage else "OFF",
-            "JUCE_USE_COREIMAGE_LOADER": "ON" if self.options.use_coreimage_loader else "OFF",
-            "JUCE_DISABLE_COREGRAPHICS_FONT_SMOOTHING": "ON" if self.options.disable_coregraphics_font_smoothing else "OFF",
-            "USE_COREGRAPHICS_RENDERING": "ON" if self.options.use_coregraphics_rendering else "OFF"
+            "JUCE_USE_DARK_SPLASH_SCREEN": "ON" if self.options.use_dark_splash_screen else "OFF",
+            "JUCE_REPORT_APP_USAGE": "ON" if self.options.report_app_usage else "OFF"
         })
         cmake.build()
         cmake.install()
