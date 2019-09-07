@@ -28,8 +28,7 @@ class JuceConan(ConanFile):
     license = "ISC"
     author = "Julien Graziano (julien@graziano.fr)"
     url = "https://github.com/khdkhd/conan-juce"
-    # source_url = "https://github.com/WeAreROLI/JUCE.git"
-    source_url = "/Users/jux/Documents/Development/KhdKhd/JuCE"
+    source_url = "https://github.com/WeAreROLI/JUCE.git"
 
     description = "The JUCE cross-platform C++ framework."
     topics = ("JUCE", "audio", "GUI")
